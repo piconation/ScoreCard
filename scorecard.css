@@ -8,22 +8,20 @@ body,html{
 #container{
     width: 100%;
     height: auto;
-    background: url('green3.jpg');
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     background-size: cover;
-    background-position: 50% 50%;
+    background: url(green3.JPG) 50% 50%;
     margin: 0 auto;
     clear: both;
-    position: absolute;
+    /*position: absolute;*/
     min-height: 860px;
     padding-top: 50px;
     -webkit-filter: blur(8px);
     filter: blur(8px);
-
 }
 
 #countdown{padding-top: 15px;}
@@ -48,7 +46,7 @@ body,html{
 #golflogo{
     width: 50px;
     height: 65px;
-    background-image: url('logo.png');
+    background-image: url(card.png);
     float:left;
     margin-right: 15px;
 }
@@ -67,17 +65,16 @@ body,html{
 #golfbanner{
     width: 99%;
     height: 350px;
-    background: url('green3.jpg');
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     background-size: cover;
-    background-position: 50% 35%;
+    background: url(green3.jpg) 50% 35%;
     margin: 25px auto;
     clear: both;
-    position: relative;
+    /*position: relative;*/
     min-height: 200px;
     border-radius: 4px;
     border: 1px solid #000;

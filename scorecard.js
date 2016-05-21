@@ -4,8 +4,8 @@
 
 var numplayers = 8;
 var numholes = 18;
-var teetime = 45;
-var seconds = 59;
+var teetime = 29;
+var seconds = 60;
 
 function buildcard(){
     beginTimer();
