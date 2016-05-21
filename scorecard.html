@@ -3,8 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Scorecard</title>
+    <script src="scorecard.css"></script>
 </head>
-<body>
+<body onload="buildcard()">
+
+<div id="overlaycontainer">
+    <div id="contentdiv">
+        <div id="golfbanner">
+            <div class="blackbar">
+                <div class="barleft">
+                    <div id="golflogo"></div>
+                    <div id="countdown"></div>
+                    <div id="logotext">Golf Score Card</div>
+                </div>
+                <div class="barright">
+                    <div id="countdown"></div>
+                </div>
+            </div>
+            <div id="golfcourselabel">Sun River Golf Club</div>
+        </div>
+        <div id="scorecard">
+
+            <div id="leftcard"></div>
+            <div id="rightcard"></div>
+
+
+        </div>
+    </div>
+</div>
+
+<div id="container"></div>
+
+
 
 </body>
+
 </html>

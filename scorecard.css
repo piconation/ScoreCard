@@ -1,0 +1,168 @@
+
+body,html{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+#container{
+    width: 100%;
+    height: auto;
+    background: url('green3.jpg');
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    margin: 0 auto;
+    clear: both;
+    position: absolute;
+    min-height: 860px;
+    padding-top: 50px;
+    -webkit-filter: blur(8px);
+    filter: blur(8px);
+
+}
+
+#countdown{padding-top: 15px;}
+
+.barleft{
+    float: left;
+    width: 270px;
+}
+.barright{
+    float:right;
+    width: 100px;
+}
+#overlaycontainer{
+    width: 100%;
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
+    position: absolute;
+    z-index: 999;
+    min-width: 600px;
+}
+
+#golflogo{
+    width: 50px;
+    height: 65px;
+    background-image: url('logo.png');
+    float:left;
+    margin-right: 15px;
+}
+#logotext{
+    padding: 20px;
+}
+
+#golfcourselabel{
+    font-size: 50px;
+    color: #FFF;
+    padding-left: 15px;
+    padding-top: 210px;
+    font-family: 'Lobster', cursive;
+}
+
+#golfbanner{
+    width: 99%;
+    height: 350px;
+    background: url('green3.jpg');
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 35%;
+    margin: 25px auto;
+    clear: both;
+    position: relative;
+    min-height: 200px;
+    border-radius: 4px;
+    border: 1px solid #000;
+}
+
+.blackbar {
+    width: 100%;
+    height: 70px;
+    color: #FFFFFF;
+    background-color: #1F1F1D;
+}
+
+#contentdiv{
+    width: 95%;
+    margin: 0 auto;
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
+}
+
+#scorecard{
+    width: 97%;
+    margin: 0 auto;
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #FFFFFF;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#leftcard{
+    float:left;
+    width:10%;
+    margin-top: 20px;
+}
+#rightcard{
+    float: right;
+    width: 90%;
+}
+
+.holecol{
+    width: 4.9%;
+    float:right;
+    height: auto;
+    border: 1px solid #CCC;
+    text-align: center;
+    margin: 2px;
+    font-size: 12px;
+}
+
+.holebox{
+    border-bottom: 1px solid #CCC;
+    height: 20px;
+    padding-top: 5px;
+}
+#playercolumn{
+    margin-top: 20px;
+    border: none;
+}
+
+.playerbox{
+    font-size: 12px;
+    border: none;
+    padding-top: 5px;
+    border-bottom: 1px solid #CCC;
+}
+
+.holenumbertitle{
+    background-color: #e0e0e0;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1105px) {
+    #leftcard{
+        width: 9.5%;
+    }
+    .holecol{
+        width: 4.7%;
+    }
+}
+@media screen and (max-width: 850px) {
+    .holecol{
+        width: 4.3%;
+    }
+    #golfcourselabel{
+        font-size: 32px;
+        padding-top: 225px;
+    }
+}
