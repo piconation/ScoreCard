@@ -20,7 +20,7 @@ body,html{
     /*position: absolute;*/
     min-height: 860px;
     padding-top: 50px;
-    -webkit-filter: blur(8px);
+    /*-webkit-filter: blur(8px);*/
     filter: blur(8px);
 }
 
@@ -71,7 +71,7 @@ body,html{
     bottom: 0;
     left: 0;
     background-size: cover;
-    background: url(green3.jpg) 50% 35%;
+    background: url(green3.JPG) 50% 35%;
     margin: 25px auto;
     clear: both;
     /*position: relative;*/

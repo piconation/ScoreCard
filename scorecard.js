@@ -7,6 +7,13 @@ var numholes = 18;
 var teetime = 29;
 var seconds = 60;
 
+function addPlayer() {
+    numplayers += 1;
+    $("#leftcard").html('');
+    $("#rightcard").html('');
+    buildcard();
+}
+
 function buildcard(){
     beginTimer();
     var holecollection = "";
