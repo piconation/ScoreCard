@@ -20,11 +20,11 @@ body,html{
     /*position: absolute;*/
     min-height: 860px;
     padding-top: 50px;
-    /*-webkit-filter: blur(8px);*/
-    filter: blur(8px);
+    /*-webkit-filter: blur(8px);
+    filter: blur(8px);*/
 }
 
-#countdown{padding-top: 15px;}
+#countdown{padding-top: 10px;}
 
 .barleft{
     float: left;
@@ -32,7 +32,9 @@ body,html{
 }
 .barright{
     float:right;
-    width: 100px;
+    width: 200px;
+    height: 60px;
+    padding-top: 10px;
 }
 #overlaycontainer{
     width: 100%;
@@ -49,9 +51,10 @@ body,html{
     background-image: url(card.png);
     float:left;
     margin-right: 15px;
+    background-size: contain;
 }
 #logotext{
-    padding: 20px;
+    padding: 10px;
 }
 
 #golfcourselabel{
