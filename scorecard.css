@@ -28,7 +28,7 @@ body,html{
 
 .barleft{
     float: left;
-    width: 270px;
+    width: 420px;
 }
 .barright{
     float:right;
@@ -46,15 +46,20 @@ body,html{
 }
 
 #golflogo{
-    width: 50px;
-    height: 65px;
-    background-image: url(card.png);
+    width: 60px;
+    height: 60px;
+    background-image: url(clubs.jpg);
     float:left;
-    margin-right: 15px;
-    background-size: contain;
+    margin-right: 10px;
+    background-size: cover;
+    border-width: 5px;
+    border-style: solid;
 }
 #logotext{
-    padding: 10px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-family: Superclarendon, cursive, sans-serif;
+    font-size: 23px;
 }
 
 #golfcourselabel{
@@ -87,7 +92,7 @@ body,html{
     width: 100%;
     height: 70px;
     color: #FFFFFF;
-    background-color: #1F1F1D;
+    /*background-color: #1F1F1D;*/
 }
 
 #contentdiv{
