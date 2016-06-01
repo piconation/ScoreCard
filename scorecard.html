@@ -7,7 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="http://golf-courses-api.herokuapp.com/courses/:id"></script>
 </head>
-<body onload="buildcard()">
+<body onload="addPlayer()">
     <div id="container">
 
         <div id="overlaycontainer">
@@ -18,7 +18,7 @@
                             <div id="golflogo"></div>
                             <div id="logotext">Pebble Beach Score Card</div>
                         </div>
-                        <div class="barright">Time til tee off:
+                        <div class="barright">You tee off in:
                             <div id="addplayer"></div>
                             <div id="countdown"></div>
                         </div>
@@ -27,7 +27,13 @@
                 </div>
                 <div id="scorecard">
                     <div id="leftcard"></div>
+                        <div id="player"></div>
                     <div id="rightcard"></div>
+                        <div id="column"></div>
+                        <div id="hole"></div>
+                        <div class="holecol"></div>
+                        <div class="holenumbertitle"></div>
+
                 </div>
             </div>
         </div>

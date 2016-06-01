@@ -2,7 +2,7 @@
  * Created by mattpowell on 5/20/16.
  */
 
-var numplayers = 8;
+var numplayers = 3;
 var numholes = 18;
 var teetime = 29;
 var seconds = 60;
@@ -42,6 +42,22 @@ function buildholes() {
             $("#column" + h).append("<div id='player" + p +"hole" + h +"' class='holebox'>s</div>");
         }
     }
+}
+
+/*function runcode() {
+    for(var p = 1; p <= numplayers; p++ ){
+        collectholes(p);
+    }
+}*/
+
+function collectholes(player){
+    var golfcourse = "";
+    for(var h = 1; h <= 18; h++){
+        var hole = "<div id='player" + player +"hole" + h +"'>hole display</div>";
+        golfcourse += hole;
+        //console.log(golfcourse);
+    }
+    $("#scorecard").append(golfcourse);
 }
 
 function beginTimer(){

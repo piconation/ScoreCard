@@ -32,9 +32,9 @@ body,html{
 }
 .barright{
     float:right;
-    width: 200px;
+    width: 125px;
     height: 60px;
-    padding-top: 10px;
+    padding-top: 12px;
 }
 #overlaycontainer{
     width: 100%;
@@ -63,10 +63,10 @@ body,html{
 }
 
 #golfcourselabel{
-    font-size: 50px;
+    font-size: 75px;
     color: #FFF;
     padding-left: 15px;
-    padding-top: 210px;
+    padding-top: 180px;
     font-family: 'Lobster', cursive;
 }
 
@@ -85,14 +85,14 @@ body,html{
     /*position: relative;*/
     min-height: 200px;
     border-radius: 4px;
-    border: 1px solid #000;
+    /*border: 1px solid #000;*/
 }
 
 .blackbar {
     width: 100%;
     height: 70px;
     color: #FFFFFF;
-    /*background-color: #1F1F1D;*/
+    background-color: #003300;
 }
 
 #contentdiv{
@@ -104,7 +104,7 @@ body,html{
 
 #scorecard{
     width: 97%;
-    margin: 0 auto;
+    margin-top: 400px;
     overflow: hidden;
     font-family: 'Open Sans', sans-serif;
     background-color: #FFFFFF;
@@ -114,12 +114,12 @@ body,html{
 
 #leftcard{
     float:left;
-    width:10%;
+    width:15%;
     margin-top: 20px;
 }
 #rightcard{
     float: right;
-    width: 90%;
+    width: 85%;
 }
 
 .holecol{
@@ -144,9 +144,8 @@ body,html{
 
 .playerbox{
     font-size: 12px;
-    border: none;
-    padding-top: 5px;
-    border-bottom: 1px solid #CCC;
+    padding-top: 3px;
+    border: 1px solid #000;
 }
 
 .holenumbertitle{
@@ -162,12 +161,32 @@ body,html{
         width: 4.7%;
     }
 }
+@media screen and (max-width: 1000px) {
+    .holecol{
+        width: 4.3%;
+    }
+    #golfcourselabel{
+        font-size: 65px;
+        padding-top: 192px;
+    }
+}
+
 @media screen and (max-width: 850px) {
     .holecol{
         width: 4.3%;
     }
     #golfcourselabel{
-        font-size: 32px;
-        padding-top: 225px;
+        font-size: 55px;
+        padding-top: 204px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .holecol{
+        width: 4.3%;
+    }
+    #golfcourselabel{
+        font-size: 45px;
+        padding-top: 216px;
     }
 }
