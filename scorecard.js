@@ -3,7 +3,7 @@
  */
 
 var numplayers = 3;
-var numholes = 18;
+var numholes = 21;
 var teetime = 29;
 var seconds = 60;
 
@@ -39,7 +39,7 @@ function buildholes() {
     // add 18 holes to the columns
     for(var p = 1; p <= numplayers; p++ ){
         for(var h = 1; h <= numholes; h++){
-            $("#column" + h).append("<div id='player" + p +"hole" + h +"' class='holebox'>s</div>");
+            $("#column" + h).append("<div id='player" + p +"hole" + h +"' class='holebox'></div>");
         }
     }
 }
@@ -48,7 +48,7 @@ function buildholes() {
     for(var p = 1; p <= numplayers; p++ ){
         collectholes(p);
     }
-}*/
+}
 
 function collectholes(player){
     var golfcourse = "";
@@ -58,7 +58,7 @@ function collectholes(player){
         //console.log(golfcourse);
     }
     $("#scorecard").append(golfcourse);
-}
+}*/
 
 function beginTimer(){
     var thetimer = setInterval(function(){clocktick()}, 1000);
