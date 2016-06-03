@@ -25,17 +25,45 @@
                 var map;
                 function initMap() {
                     map = new google.maps.Map(document.getElementById('map'), {
-                        center: {lat: 36.561320, lng: -121.940334},
-                        zoom: 18
+                        center: {lat: 36.561520, lng: -121.940400},
+                        zoom: 17
                     });
-                    var image = '../images/smallflag.png';
-                    var beachMarker = new google.maps.Marker({
+                    var image = 'smallflag.png';
+                    var greenMarker = new google.maps.Marker({
                         position: {lat: 36.561320, lng: -121.940334},
                         map: map,
                         icon: image
                     });
+                    var tee = 'tee3.png';
+                    var box = new google.maps.Marker({
+                        position: {lat: 36.562079, lng: -121.940479},
+                        map: map,
+                        icon: tee
+                    });
                 }
             </script>
+        <div id="map2"></div>
+        <script>
+            var map2;
+            function initMap() {
+                map2 = new google.maps.Map(document.getElementById('map2'), {
+                    center: {lat: 36.561520, lng: -121.940400},
+                    zoom: 17
+                });
+                var image = 'smallflag.png';
+                var greenMarker = new google.maps.Marker({
+                    position: {lat: 36.561320, lng: -121.940334},
+                    map: map2,
+                    icon: image
+                });
+                var tee = 'tee3.png';
+                var box = new google.maps.Marker({
+                    position: {lat: 36.562079, lng: -121.940479},
+                    map: map2,
+                    icon: tee
+                });
+            }
+        </script>
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKNODytF8iK3h8Is4Sfob8NE_SJhb4ItI&callback=initMap"
                     async defer></script>
 
