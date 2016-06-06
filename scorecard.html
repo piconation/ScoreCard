@@ -20,7 +20,7 @@
 </head>
 <body onload="addPlayer(); buildcard()">
     <div id="container">
-            <div id="map"></div>
+            <!--<div id="map"></div>
             <script>
                 var map;
                 function initMap() {
@@ -41,29 +41,7 @@
                         icon: tee
                     });
                 }
-            </script>
-        <div id="map2"></div>
-        <script>
-            var map2;
-            function initMap() {
-                map2 = new google.maps.Map(document.getElementById('map2'), {
-                    center: {lat: 36.561520, lng: -121.940400},
-                    zoom: 17
-                });
-                var image = 'smallflag.png';
-                var greenMarker = new google.maps.Marker({
-                    position: {lat: 36.561320, lng: -121.940334},
-                    map: map2,
-                    icon: image
-                });
-                var tee = 'tee3.png';
-                var box = new google.maps.Marker({
-                    position: {lat: 36.562079, lng: -121.940479},
-                    map: map2,
-                    icon: tee
-                });
-            }
-        </script>
+            </script>-->
             <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKNODytF8iK3h8Is4Sfob8NE_SJhb4ItI&callback=initMap"
                     async defer></script>
 
@@ -73,13 +51,23 @@
                     <div class="blackbar">
                         <div class="barleft">
                             <div id="golflogo"></div>
-                            <div id="logotext">Pebble Beach Score Card</div>
+                            <div id="logotext">Select Your Course Below</div>
+
                         </div>
                         <div class="barright">You tee off in:
                             <div id="countdown"></div>
                         </div>
                     </div>
-                    <div id="golfcourselabel">Pebble Beach Golf Club</div>
+                    <div id="golfcourselabel">
+                        <select id="selectcourse">
+                        <option>/*onchange="getCourseInfo(this.value)"*/ Select A Course</option>
+                        <option>Select A Course</option>
+                        <option>Select A Course</option>
+                        <option>Select A Course</option>
+                        <option>Select A Course</option>
+                        </select>
+                        <select id="selectTeebox" onchange="getCourseInfo(this.value)"></select><br>Select Your Course Above
+                    </div>
                 </div>
                 <div id="scorecard">
                     <!--<div id="holeinfo">

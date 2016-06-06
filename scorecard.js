@@ -14,10 +14,11 @@ function addPlayer() {
     buildcard();
 }
 
-function buildcard(){
+function buildcard(theteeboxid){
     beginTimer();
     var holecollection = "";
     var playercollection = "";
+    var grandtotalcollection = "";
 
     // create column of player labels
     for(var pl = 1; pl <= numplayers; pl++ ){
@@ -26,13 +27,40 @@ function buildcard(){
 
     // create golf hole columns before you add holes to them.
     for(var c = numholes; c >= 1; c-- ){
-        holecollection += "<div id='column" + c +"' class='holecol'><div class='holenumbertitle'>" + c + "</div></div>";
+        var adjusthole = c - 1;
+        holecollection += "<div id='column" + c +"' class='holecol'><div class='holenumbertitle'>" + c + "</div>par " + testCourse.course.holes[adjusthole].tee_boxes[theteeboxid].par + "</div></div></div>";
     }
     $("#leftcard").html(playercollection);
     $("#rightcard").html(holecollection);
 
     // call the function that builds the holes into the columns
     buildholes();
+}
+
+function holeInfo() {
+    
+}
+
+function getCourseInfo(id) {
+    golfxhttp = new XMLHttpRequest;
+    golfxhttp.onreadystatechange = function () {
+        if (golfxhttp.readyState == 4 && golfxhttp.status == 200) {
+        testCourse = JSON.parse(golfxhttp.responseText);
+        $("#golfcourselabel").html(testCourse.course.name);
+            gettheWeather(testCourse.course.city);
+            for(var t = 0; t < (testCourse.course.holes[0].tee_boxes.length - 1); t++) {
+                var teeboxdisplay = "<option value='" + t + "'>"+ testCourse.course.holes[0].tee_boxes[t].tee_color_type +"</option>";
+                $("#selectTeebox").append(teeboxdisplay);
+            }
+        }
+    };
+}
+
+golfxhttp.open("GET", "https:..folg-courses-api.herokuapp.com/courses/" + id, true);
+golfxhttp.send();
+
+function setCourseInfo(teeboxid) {
+    buildcard(theteeboxid);
 }
 
 function buildholes() {
@@ -42,6 +70,18 @@ function buildholes() {
             $("#column" + h).append("<div id='player" + p +"hole" + h +"' class='holebox'></div>");
         }
     }
+}
+
+function gettheWeather(thecityname) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            var myobj = JSON.parse(xhttp.responseText);
+            document.getElementById("weather").innerHTML = myobj.weather[0].description;
+        }
+    }
+    xhttp.open("GET", "https://api.openweather", true);
+    xhttp.send();
 }
 
 /*function runcode() {
