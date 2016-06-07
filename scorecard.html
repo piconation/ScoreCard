@@ -5,8 +5,9 @@
     <title>Scorecard</title>
     <link rel="stylesheet" type="text/css" href="scorecard.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="http://golf-courses-api.herokuapp.com/courses/:id"></script>
-    <style>
+    <!--<script src="https://golf-courses-api.herokuapp.com/courses/:id"></script>-->
+    <script src="scorecard.js"></script>
+    <!--<style>
         html, body {
             height: 100%;
             margin-top: 400px;
@@ -16,10 +17,9 @@
             height: 200px;
             width: 75px;
         }
-    </style>
+    </style>-->
 </head>
-<body onload="addPlayer(); buildcard()">
-    <div id="container">
+<body onload="loadMe(); addPlayer(); buildcard()">
             <!--<div id="map"></div>
             <script>
                 var map;
@@ -41,9 +41,9 @@
                         icon: tee
                     });
                 }
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKNODytF8iK3h8Is4Sfob8NE_SJhb4ItI&callback=initMap"async defer>
             </script>-->
-            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKNODytF8iK3h8Is4Sfob8NE_SJhb4ItI&callback=initMap"
-                    async defer></script>
 
         <div id="overlaycontainer">
             <div id="contentdiv">
@@ -52,21 +52,23 @@
                         <div class="barleft">
                             <div id="golflogo"></div>
                             <div id="logotext">Select Your Course Below</div>
-
                         </div>
                         <div class="barright">You tee off in:
                             <div id="countdown"></div>
                         </div>
                     </div>
                     <div id="golfcourselabel">
-                        <select id="selectcourse">
-                        <option>/*onchange="getCourseInfo(this.value)"*/ Select A Course</option>
-                        <option>Select A Course</option>
-                        <option>Select A Course</option>
-                        <option>Select A Course</option>
-                        <option>Select A Course</option>
-                        </select>
-                        <select id="selectTeebox" onchange="getCourseInfo(this.value)"></select><br>Select Your Course Above
+                        <select id="selectcourse" onchange=" getCourseInfo(this.value)"></select>
+                        <select id="selectTeebox" onchange=" setCourseInfo(this.value)"></select><br>Select Your Course Above
+                        <div class="rightwidget">
+
+                            <div id="topweather">
+                                <span id="currenttemp">72</span><span class="degsign">&deg;</span>
+                            </div>
+                            <img id="weatherimage" src="http://openweathermap.org/img/w/03d.png">
+                            <div id="currentconditions">partly cloudy</div>
+
+                        </div>
                     </div>
                 </div>
                 <div id="scorecard">
@@ -81,9 +83,7 @@
                 </div>
             </div>
         </div>
-    </div>
-<script src="scorecard.js"></script>
-
+        <div id="container"></div>
 </body>
 
 </html>

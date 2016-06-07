@@ -61,10 +61,6 @@ function fullconverter(k){
             buildholes();
         }
 
-        function holeInfo() {
-
-        }
-
         function getCourseInfo(id) {
             golfxhttp = new XMLHttpRequest;
             golfxhttp.onreadystatechange = function () {
@@ -108,7 +104,7 @@ function fullconverter(k){
                     document.getElementById("currenttemp").innerHTML = fullconverter(Number(obj.main.temp));
                     document.getElementById("weatherimage").src = "http://openweathermap.org/img/w/" + obj.weather[0].icon + ".png";
                 }
-            }
+            };
 
             xhttp.open("GET", "https://api.openweathermap.org/data/2.5/weather?q=" + thecityname + "&appid=cc8ef8e5c209d938ab3801daa42b5e31", true);
             xhttp.send();
