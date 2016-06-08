@@ -19,7 +19,7 @@
         }
     </style>-->
 </head>
-<body onload="loadMe(); addPlayer(); buildcard()">
+<body onload="loadMe()">
             <!--<div id="map"></div>
             <script>
                 var map;
@@ -57,17 +57,18 @@
                             <div id="countdown"></div>
                         </div>
                     </div>
-                    <div id="golfcourselabel">
-                        <select id="selectcourse" onchange=" getCourseInfo(this.value)"></select>
-                        <select id="selectTeebox" onchange=" setCourseInfo(this.value)"></select><br>Select Your Course Above
+                    <div id="info">
+                        <div id="golfcourselabel">
+                            <select id="selectCourse" onchange=" getCourseInfo(this.value)"></select>
+                            <select id="selectTeebox" onchange=" setCourseInfo(this.value)"></select><br>Select Your Course Above
+                        </div>
                         <div class="rightwidget">
-
                             <div id="topweather">
                                 <span id="currenttemp">72</span><span class="degsign">&deg;</span>
                             </div>
                             <img id="weatherimage" src="http://openweathermap.org/img/w/03d.png">
-                            <div id="currentconditions">partly cloudy</div>
-
+                            <div id="currentconditions">partly cloudy
+                            </div>
                         </div>
                     </div>
                 </div>

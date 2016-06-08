@@ -64,14 +64,15 @@ body,html{
 }
 
 #golflogo{
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     background-image: url(clubs.jpg);
     float:left;
     margin-right: 10px;
     background-size: cover;
-    border-width: 5px;
+    border-width: 10px;
     border-style: solid;
+    border-color: #003300;
 }
 
 #logotext{
@@ -82,20 +83,32 @@ body,html{
 }
 
 #golfcourselabel{
-    font-size: 75px;
+    font-size: 50px;
     color: #FFF;
+    margin-top: 50px;
     padding-left: 15px;
     font-family: 'Lobster', cursive;
     float: left;
+}
+
+#info{
     width: 97%;
+    height: 230px;
+    font-size: 50px;
+    color: #FFF;
+    padding-left: 15px;
+    font-family: 'Lobster', cursive;
 }
 
 .rightwidget{
     float: right;
     width: 200px;
-    height: 215px;
+    height: 200px;
     background-image: url(black.png);
-    margin-top: 65px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    margin-right: 20px;
+    margin-left: 20px;
     color: #FFFFFF;
     text-align: center;
     border-radius: 50%;
@@ -115,16 +128,18 @@ body,html{
 #currenttemp{
     font-size: 65px;
     text-align: center;
+    font-family: "Times New Roman", sans-serif;
 }
 
 .degsign{
     position: relative;
-    top: -20px;
+    top: -30px;
     font-size: 30px;
+    font-family: "Times New Roman", sans-serif;
 }
 
 #golfbanner{
-    width: 97%;
+    width: 95%;
     height: 300px;
     position: fixed;
     top: 0;
@@ -144,6 +159,7 @@ body,html{
 #topweather{
     width: 100%;
     margin: 0 auto;
+    padding-top: 15px;
     position: relative;
 }
 
@@ -225,34 +241,5 @@ body,html{
     }
     .holecol{
         width: 4.7%;
-    }
-}
-@media screen and (max-width: 1055px) {
-    .holecol{
-        width: 4.3%;
-    }
-    #golfcourselabel{
-        font-size: 65px;
-        padding-top: 27px;
-    }
-}
-
-@media screen and (max-width: 850px) {
-    .holecol{
-        width: 4.3%;
-    }
-    #golfcourselabel{
-        font-size: 55px;
-        padding-top: 54px;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .holecol{
-        width: 4.3%;
-    }
-    #golfcourselabel{
-        font-size: 45px;
-        padding-top: 80px;
     }
 }
