@@ -40,7 +40,6 @@ function fullconverter(k){
 }
 
 function buildcard(theteeboxid) {
-    beginTimer();
     var holecollection = "";
     var playercollection = "";
     var grandtotalcollection = "";
@@ -79,6 +78,7 @@ function getCourseInfo(id) {
 
     golfxhttp.open("GET", "https://golf-courses-api.herokuapp.com/courses/" + id, true);
     golfxhttp.send();
+    beginTimer();
 }
 
 

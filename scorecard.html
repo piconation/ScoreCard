@@ -5,7 +5,7 @@
     <title>Scorecard</title>
     <link rel="stylesheet" type="text/css" href="scorecard.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <!--<script src="https://golf-courses-api.herokuapp.com/courses/:id"></script>-->
+    <script src="https://golf-courses-api.herokuapp.com/courses/:id"></script>
     <script src="scorecard.js"></script>
     <!--<style>
         html, body {
@@ -46,6 +46,7 @@
             </script>-->
 
         <div id="overlaycontainer">
+            <div class="col-lg-12" id="message"></div>
             <div id="contentdiv">
                 <div id="golfbanner">
                     <div class="blackbar">
@@ -63,11 +64,11 @@
                             <select id="selectTeebox" onchange=" setCourseInfo(this.value)"></select><br>Select Your Course Above
                         </div>
                         <div class="rightwidget">
-                            <div id="topweather">
+                            <div id="topweather">Currently:<br>
                                 <span id="currenttemp">72</span><span class="degsign">&deg;</span>
                             </div>
                             <img id="weatherimage" src="http://openweathermap.org/img/w/03d.png">
-                            <div id="currentconditions">partly cloudy
+                            <div id="currentconditions">&
                             </div>
                         </div>
                     </div>
@@ -78,7 +79,9 @@
                     </div>-->
 
                     <div id="leftcard"></div>
-                    <div id="addplayer"></div>
+                    <div id="addplayer">
+                        <button onclick="addPlayer()">Add A Player</button>
+                    </div>
                     <div id="rightcard"></div>
 
                 </div>
