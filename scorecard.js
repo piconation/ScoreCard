@@ -39,6 +39,25 @@ function fullconverter(k){
     return Math.round(tof);
 }
 
+function getCourseInfo(id) {
+    golfxhttp = new XMLHttpRequest;
+    golfxhttp.onreadystatechange = function () {
+        if (golfxhttp.readyState == 4 && golfxhttp.status == 200) {
+            testCourse = JSON.parse(golfxhttp.responseText);
+            $("#golfcourselabel").html(testCourse.course.name);
+            gettheWeather(testCourse.course.city);
+            for (var t = 0; t < (testCourse.course.holes[0].tee_boxes.length - 1); t++) {
+                var teeboxdisplay = "<option value='" + t + "'>" + testCourse.course.holes[0].tee_boxes[t].tee_color_type + "</option>";
+                $("#selectTeebox").append(teeboxdisplay);
+            }
+        }
+    };
+
+    golfxhttp.open("GET", "https://golf-courses-api.herokuapp.com/courses/" + id, true);
+    golfxhttp.send();
+    beginTimer();
+}
+
 function buildcard(theteeboxid) {
     var holecollection = "";
     var playercollection = "";
@@ -61,27 +80,6 @@ function buildcard(theteeboxid) {
     // call the function that builds the holes into the columns
     buildholes();
 }
-
-function getCourseInfo(id) {
-    golfxhttp = new XMLHttpRequest;
-    golfxhttp.onreadystatechange = function () {
-        if (golfxhttp.readyState == 4 && golfxhttp.status == 200) {
-            testCourse = JSON.parse(golfxhttp.responseText);
-            $("#golfcourselabel").html(testCourse.course.name);
-            gettheWeather(testCourse.course.city);
-            for (var t = 0; t < (testCourse.course.holes[0].tee_boxes.length - 1); t++) {
-                var teeboxdisplay = "<option value='" + t + "'>" + testCourse.course.holes[0].tee_boxes[t].tee_color_type + "</option>";
-                $("#selectTeebox").append(teeboxdisplay);
-            }
-        }
-    };
-
-    golfxhttp.open("GET", "https://golf-courses-api.herokuapp.com/courses/" + id, true);
-    golfxhttp.send();
-    beginTimer();
-}
-
-
 
 function setCourseInfo(teeboxid) {
     buildcard(teeboxid);
