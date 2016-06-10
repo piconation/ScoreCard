@@ -91,7 +91,7 @@ function buildcard(theteeboxid) {
         holecollection += "<div id='column" + c +"' class='holecol'><div class='holenumbertitle'>" + c + "<div>Par " + testCourse.course.holes[adjusthole].tee_boxes[theteeboxid].par + "<div>Yards " + testCourse.course.holes[adjusthole].tee_boxes[theteeboxid].yards + "<div>HCP " + testCourse.course.holes[adjusthole].tee_boxes[theteeboxid].hcp + "</div></div></div></div></div>";
     }
     $("#leftcard").html(playercollection);
-    $("#rightcard").html( ("<div class='holecol'><div>total</div>" + grandtotalcollection + "</div>") + holecollection );
+    $("#rightcard").html( ("<div class='holecol'><div>Total</div>" + grandtotalcollection + "</div>") + holecollection );
 
     // call the function that builds the holes into the columns
     buildholes();
