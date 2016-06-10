@@ -2,8 +2,8 @@
  * Created by mattpowell on 5/20/16.
  */
 
-var numplayers = 4;
-var numholes = 21;
+var numplayers = 1;
+var numholes = 18;
 var teetime = 29;
 var seconds = 60;
 var testCourse = {};
@@ -24,14 +24,31 @@ function loadMe() {
     addPlayer();
 }
 
-        //document.getElementById('golfDiv').style.display = 'block';
-
 function addPlayer() {
     numplayers += 1;
     $("#leftcard").html('');
     $("#rightcard").html('');
-    buildcard();
 }
+
+/*function addPlayer(){
+    var parentlength = $('#leftcard').children().size();
+
+    var bignum;
+
+    for(var l = 1; l <= parentlength; l++){
+        var grabid = $("#leftcard :nth-child(" + l + ")").attr("id");
+        var idsplit = grabid.split("player");
+        console.log(idsplit);
+        bignum = Number(idsplit[1]);
+    }
+    var adjnum = bignum + 1;
+    $("#leftcard").append("<div id='player" + adjnum +"' class='holebox playerbox'> Player "+ adjnum +"</div>");
+    for(var h = 1; h <= numholes; h++){
+        $("#column" + h).append("<input onkeyup='calculatescore(" + adjnum +")' id='player" + adjnum +"hole" + h +"' class='holebox'/>");
+    }
+    $(".totalcol").append("<div id='grand" + adjnum +"' class='holebox'>0</div>");
+
+}*/
 
 function fullconverter(k){
     var toc = +k - 273.15;
@@ -44,7 +61,7 @@ function getCourseInfo(id) {
     golfxhttp.onreadystatechange = function () {
         if (golfxhttp.readyState == 4 && golfxhttp.status == 200) {
             testCourse = JSON.parse(golfxhttp.responseText);
-            $("#golfcourselabel").html(testCourse.course.name);
+            $("#textlabel").html(testCourse.course.name);
             gettheWeather(testCourse.course.city);
             for (var t = 0; t < (testCourse.course.holes[0].tee_boxes.length - 1); t++) {
                 var teeboxdisplay = "<option value='" + t + "'>" + testCourse.course.holes[0].tee_boxes[t].tee_color_type + "</option>";
@@ -55,7 +72,6 @@ function getCourseInfo(id) {
 
     golfxhttp.open("GET", "https://golf-courses-api.herokuapp.com/courses/" + id, true);
     golfxhttp.send();
-    beginTimer();
 }
 
 function buildcard(theteeboxid) {
@@ -72,7 +88,7 @@ function buildcard(theteeboxid) {
     // create golf hole columns before you add holes to them.
     for (var c = numholes; c >= 1; c--) {
         var adjusthole = c - 1;
-        holecollection += "<div id='column" + c + "' class='holecol'><div class='holenumbertitle'>" + c + "</div>par " + testCourse.course.holes[adjusthole].tee_boxes[theteeboxid].par + "</div></div></div>";
+        holecollection += "<div id='column" + c +"' class='holecol'><div class='holenumbertitle'>" + c + "<div>Par " + testCourse.course.holes[adjusthole].tee_boxes[theteeboxid].par + "<div>Yards " + testCourse.course.holes[adjusthole].tee_boxes[theteeboxid].yards + "<div>HCP " + testCourse.course.holes[adjusthole].tee_boxes[theteeboxid].hcp + "</div></div></div></div></div>";
     }
     $("#leftcard").html(playercollection);
     $("#rightcard").html( ("<div class='holecol'><div>total</div>" + grandtotalcollection + "</div>") + holecollection );
